@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "materias")
 public class Materia {
 
     @Id
@@ -19,9 +20,9 @@ public class Materia {
     @ManyToOne
     @JoinColumn(name = "fk_curso", referencedColumnName = "id_curso")
     @JsonBackReference
-    Curso curso;
+    private Curso curso;
 
-    @OneToMany
+    @OneToMany(mappedBy = "materia")
     @JsonManagedReference
     private List<Calificacion>calificaciones;
 

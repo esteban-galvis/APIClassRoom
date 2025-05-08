@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "calificaciones")
 public class Calificacion {
 
     @Id
@@ -20,12 +21,12 @@ public class Calificacion {
     @ManyToOne
     @JoinColumn(name = "fk_estudiante", referencedColumnName = "id_estudiante")
     @JsonBackReference
-    Estudiante estudiante;
+    private Estudiante estudiante;
 
     @ManyToOne
     @JoinColumn(name = "fk_materia", referencedColumnName = "id_materia")
     @JsonBackReference
-    Materia materia;
+    private Materia materia;
 
     public Calificacion() {
     }

@@ -21,15 +21,15 @@ public class Estudiante {
     @Column(nullable = false, length = 255)
     private String direccion;
 
-    @OneToMany
+    @OneToMany(mappedBy = "estudiante")
     @JsonManagedReference
     private List<Inscripcion>inscripciones;
 
-    @OneToMany
+    @OneToMany(mappedBy = "estudiante")
     @JsonManagedReference
     private List<Calificacion>calificaciones;
 
-    @OneToMany
+    @OneToMany(mappedBy = "estudiante")
     @JsonManagedReference
     private List<Asistencia>asistencias;
 

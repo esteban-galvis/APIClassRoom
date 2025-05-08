@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "asistencias")
 public class Asistencia {
 
     @Id
@@ -21,12 +22,12 @@ public class Asistencia {
     @ManyToOne
     @JoinColumn(name = "fk_estudiante", referencedColumnName = "id_estudiante")
     @JsonBackReference
-    Estudiante estudiante;
+    private Estudiante estudiante;
 
     @ManyToOne
     @JoinColumn(name = "fk_curso", referencedColumnName = "id_curso")
     @JsonBackReference
-    Curso curso;
+    private Curso curso;
 
     public Asistencia() {
     }

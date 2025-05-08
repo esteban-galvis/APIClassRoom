@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "cursos")
 public class Curso {
 
     @Id
@@ -16,20 +17,20 @@ public class Curso {
     @Column(nullable = false,length = 100)
     private String nombre;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "fk_docente", referencedColumnName = "id_docente")
     @JsonBackReference
-    Docente docente;
+    private Docente docente;
 
-    @OneToMany
+    @OneToMany(mappedBy = "curso")
     @JsonManagedReference
     private List<Inscripcion>inscripciones;
 
-    @OneToMany
+    @OneToMany(mappedBy = "curso")
     @JsonManagedReference
     private List<Materia>materias;
 
-    @OneToMany
+    @OneToMany(mappedBy = "curso")
     @JsonManagedReference
     private List<Asistencia>asistencias;
 
