@@ -1,6 +1,7 @@
 package com.example.APIClassRoom.modelos;
 
 import com.example.APIClassRoom.ayudas.TipoUsuario;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -22,7 +23,13 @@ public class Usuario {
     @Column(length = 20)
     private String telefono;
     @Column(name = "tipo_usuario", nullable = false)
+    @Enumerated(EnumType.STRING)
     private TipoUsuario tipoUsuario;
+
+    //Estableciendo la relacion uno a uno con tabla docente
+    @OneToOne(mappedBy = "usuario")
+    @JsonBackReference(value = "docente-usuario")
+    private Docente docente;
 
     public Usuario() {
     }

@@ -17,6 +17,7 @@ public class Asistencia {
     @Column(nullable = false)
     private LocalDate fecha;
     @Column(name = "estado")
+    @Enumerated(EnumType.STRING)
     private TipoAsistencia tipoAsistencia;
 
     @ManyToOne

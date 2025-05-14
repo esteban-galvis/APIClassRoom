@@ -1,0 +1,16 @@
+/usuarios
+{
+    "nombre":"Esteban Felipe Galvis Londoño",
+    "correoElectronico":"egalvis@cedsde.net",
+    "contraseña":"jfrlfñrfl5456",
+    "telefono":"3194939716",
+    "tipoUsuario":"Estudiante"
+}
+
+/docentes
+{
+    "especialidad":"Ingeniero",
+    "usuario":{
+        "id":1
+    }
+}
