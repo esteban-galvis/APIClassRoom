@@ -14,3 +14,64 @@
         "id":1
     }
 }
+
+/estudiantes
+{
+    "usuario":{
+        "id":1
+    },
+    "grado":"4",
+    "fechaNacimiento":"09/01/2014",
+    "direccion":"calle 22 30-12"
+}
+
+/asistencias
+{
+    "estudiante":{
+        "id":1
+    },
+    "cursos":{
+        "id":1
+    },
+    "fecha":"12/03/2024",
+    "tipoAsistencia":"Asiste"
+}
+
+/cursos
+{
+    "nombre":"calculo",
+    "docente":{
+        "id":1
+    }
+}
+
+/inscripciones
+{
+    "estudiante":{
+        "id":1
+    },
+    "curso":{
+        "id":1
+    },
+    "fechaInscripcion":"04/05/2024"
+}
+
+/materias
+{
+    "curso":{
+     "id":1
+    },
+    "nombre":"calculo"
+}
+
+/calificaciones
+{
+    "estudiante":{
+        "id":1
+    },
+    "materia":{
+        "id":1
+    },
+    "nota":4.2,
+    "fechaEvaluacion":"05/06/2024"
+}

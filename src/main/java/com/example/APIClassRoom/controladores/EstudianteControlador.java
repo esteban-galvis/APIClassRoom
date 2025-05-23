@@ -1,25 +1,24 @@
 package com.example.APIClassRoom.controladores;
 
-import com.example.APIClassRoom.modelos.Asistencia;
-import com.example.APIClassRoom.servicios.AsistenciaServicio;
+import com.example.APIClassRoom.modelos.Estudiante;
+import com.example.APIClassRoom.servicios.EstudianteServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/asistencias")
-public class AsistenciaControlador {
+@RequestMapping("/estudiantes")
+public class EstudianteControlador {
 
     @Autowired
-    AsistenciaServicio servicio;
+    EstudianteServicio servicio;
 
     //CONTROLADOR PARA GUARDAR
-    @PostMapping
-    public ResponseEntity<?> guardar(@RequestBody Asistencia datosEnviadosPorElCliente){
+    public ResponseEntity<?> guardar(@RequestBody Estudiante datosEnviadosPorElCliente){
         try {
             return ResponseEntity
-                    .status(HttpStatus.CREATED).body(this.servicio.guardarAsistencia(datosEnviadosPorElCliente));
+                    .status(HttpStatus.CREATED).body(this.servicio.guardarEstudiante(datosEnviadosPorElCliente));
         }catch (Exception errorAPI){
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST).body(errorAPI.getMessage());
@@ -29,46 +28,46 @@ public class AsistenciaControlador {
     //Controlador para modificar
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> modificar(@PathVariable Integer id, @RequestBody Asistencia datos){
+    public ResponseEntity<?> modificar(@PathVariable Integer id, @RequestBody Estudiante datos){
         try {
             return ResponseEntity
-                    .status(HttpStatus.OK).body(this.servicio.modificarAsistencia(id, datos));
-        }catch (Exception errorAPI){
+                    .status(HttpStatus.OK).body(this.servicio.modificarEstudiante(id, datos));
+        }catch (Exception errorAPPI){
             return ResponseEntity
-                    .status(HttpStatus.BAD_REQUEST).body(errorAPI.getMessage());
+                    .status(HttpStatus.BAD_REQUEST).body(errorAPPI.getMessage());
         }
     }
 
-    //CONTROLADOR PARA BUSCAR POR ID
+    //Controlador para buscar por id
     @GetMapping("/{id}")
     public ResponseEntity<?> buscarPorId(@PathVariable Integer id){
         try {
             return ResponseEntity
-                    .status(HttpStatus.OK).body(this.servicio.buscarAsistenciaPorId(id));
+                    .status(HttpStatus.OK).body(this.servicio.buscarEstudiantePorId(id));
         }catch (Exception errorAPI){
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST).body(errorAPI.getMessage());
         }
     }
 
-    //CONTROLADOR PARA BUSCARLOS TODOS
+    //Controlador para buscarlos a todos
     @GetMapping
     public ResponseEntity<?> buscarTodo(){
         try {
             return ResponseEntity
-                    .status(HttpStatus.OK).body(this.servicio.buscarTodasAsistencias());
+                    .status(HttpStatus.OK).body(this.servicio.buscarTodosEstudiantes());
         }catch (Exception errorAPI){
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST).body(errorAPI.getMessage());
         }
     }
 
-    //CONTROLADOR PARA ELIMINAR
+    //Controlador para eliminar
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminar(@PathVariable Integer id){
         try {
             return ResponseEntity
-                    .status(HttpStatus.OK).body(this.servicio.eliminarAsistencia(id));
+                    .status(HttpStatus.OK).body(this.servicio.eliminarEstudiante(id));
         }catch (Exception errorAPI){
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST).body(errorAPI.getMessage());
