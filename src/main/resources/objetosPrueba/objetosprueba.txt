@@ -11,29 +11,29 @@
 {
     "especialidad":"Ingeniero",
     "usuario":{
-        "id":1
+        "idDocente":1
     }
 }
 
 /estudiantes
 {
     "usuario":{
-        "id":1
+        "idEstudiante":1
     },
     "grado":"4",
-    "fechaNacimiento":"09/01/2014",
+    "fechaNacimiento":"2014-11-01",
     "direccion":"calle 22 30-12"
 }
 
 /asistencias
 {
-    "estudiante":{
-        "id":1
-    },
     "cursos":{
-        "id":1
+        "idCurso":1
     },
-    "fecha":"12/03/2024",
+    "estudiante":{
+            "idEstudiante":1
+        },
+    "fecha":"2024-03-12",
     "tipoAsistencia":"Asiste"
 }
 
@@ -41,25 +41,25 @@
 {
     "nombre":"calculo",
     "docente":{
-        "id":1
+        "idDocente":1
     }
 }
 
 /inscripciones
 {
     "estudiante":{
-        "id":1
+        "idEstudiante":1
     },
     "curso":{
-        "id":1
+        "idCurso":1
     },
-    "fechaInscripcion":"04/05/2024"
+    "fechaInscripcion":"2024-05-04"
 }
 
 /materias
 {
     "curso":{
-     "id":1
+     "idCurso":1
     },
     "nombre":"calculo"
 }
@@ -67,11 +67,11 @@
 /calificaciones
 {
     "estudiante":{
-        "id":1
+        "idDocente":1
     },
     "materia":{
-        "id":1
+        "idMateria":1
     },
     "nota":4.2,
-    "fechaEvaluacion":"05/06/2024"
+    "fechaEvaluacion":"2024-06-05"
 }

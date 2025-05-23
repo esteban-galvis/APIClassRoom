@@ -15,6 +15,7 @@ public class MateriaControlador {
     MateriaServicio servicio;
 
     //CONTROLADOR PARA GUARDAR
+    @PostMapping
     public ResponseEntity<?> guardar(@RequestBody Materia datosEnviadosPorElCliente){
         try {
             return ResponseEntity

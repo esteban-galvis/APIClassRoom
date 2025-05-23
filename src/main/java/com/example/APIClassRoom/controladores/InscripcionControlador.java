@@ -15,6 +15,7 @@ public class InscripcionControlador {
     InscripcionServicio servicio;
 
     //CONTROLADOR PARA GUARDAR
+    @PostMapping
     public ResponseEntity<?> guardar(@RequestBody Inscripcion datosEnviadosPorElCliente){
         try {
             return ResponseEntity

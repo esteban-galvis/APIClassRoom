@@ -15,6 +15,7 @@ public class UsuarioControlador {
     UsuarioServicio servicio;
 
     //CONTROLADOR PARA GUARDAR
+    @PostMapping
     public ResponseEntity<?> guardar(@RequestBody Usuario datosEnviadosPorElCliente){
         try {
             return ResponseEntity

@@ -19,11 +19,11 @@ public class Materia {
 
     @ManyToOne
     @JoinColumn(name = "fk_curso", referencedColumnName = "id_curso")
-    @JsonBackReference
+    @JsonBackReference(value = "curso-meteria")
     private Curso curso;
 
     @OneToMany(mappedBy = "materia")
-    @JsonManagedReference
+    @JsonManagedReference(value = "calificacion-materia")
     private List<Calificacion>calificaciones;
 
     public Materia() {

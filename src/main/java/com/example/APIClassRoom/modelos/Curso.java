@@ -23,15 +23,15 @@ public class Curso {
     private Docente docente;
 
     @OneToMany(mappedBy = "curso")
-    @JsonManagedReference
+    @JsonManagedReference(value = "curso-inscripcion")
     private List<Inscripcion>inscripciones;
 
     @OneToMany(mappedBy = "curso")
-    @JsonManagedReference
+    @JsonManagedReference(value = "curso-meteria")
     private List<Materia>materias;
 
     @OneToMany(mappedBy = "curso")
-    @JsonManagedReference
+    @JsonManagedReference(value = "curso-asistencia")
     private List<Asistencia>asistencias;
 
     public Curso() {

@@ -17,12 +17,12 @@ public class Inscripcion {
 
     @ManyToOne
     @JoinColumn(name = "fk_estudiante", referencedColumnName = "id_estudiante")
-    @JsonBackReference
+    @JsonBackReference(value = "inscripcion-estudiante")
     private Estudiante estudiante;
 
     @ManyToOne
     @JoinColumn(name = "fk_curso", referencedColumnName = "id_curso")
-    @JsonBackReference
+    @JsonBackReference(value = "curso-inscripcion")
     private Curso curso;
 
     public Inscripcion() {
