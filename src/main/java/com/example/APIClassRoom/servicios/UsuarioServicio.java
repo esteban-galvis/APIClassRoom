@@ -1,6 +1,8 @@
 package com.example.APIClassRoom.servicios;
 
+import com.example.APIClassRoom.DTO.DTOUsuario;
 import com.example.APIClassRoom.ayudas.MensajesAPI;
+import com.example.APIClassRoom.mapas.IMapaUsuario;
 import com.example.APIClassRoom.modelos.Usuario;
 import com.example.APIClassRoom.repositorios.IUsuarioRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +17,14 @@ public class UsuarioServicio {
     @Autowired
     IUsuarioRepositorio repositorio;
 
+    //Inyectar el mapa
+    @Autowired
+    IMapaUsuario iMapaUsuario;
+
     //GUARDAR
-    public Usuario guardarUsuario(Usuario datosUsuario)throws Exception{
+    public DTOUsuario guardarUsuario(Usuario datosUsuario)throws Exception{
         try {
-            return this.repositorio.save(datosUsuario);
+            return this.iMapaUsuario.transformarModeloADto(this.repositorio.save(datosUsuario));
         }catch (Exception error){
             throw new Exception(error.getMessage());
         }
